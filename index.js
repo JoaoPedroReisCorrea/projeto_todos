@@ -38,9 +38,9 @@ app.get("/active-tasks", (request, response) => {
     })
 })
 
-app.get("/recovery-tasks", (request, response) => {
-    const selectCommand ="SELECT * FROM ToDo_JoaoReis WHERE status = 1"
-    
+app.get("/completed-tasks", (request, response) => {
+    const selectCommand = "SELECT * FROM ToDo_JoaoReis WHERE status = 1"
+
     database.query(selectCommand, (error, data) => {
         if (error) {
             console.log(error)
@@ -49,13 +49,12 @@ app.get("/recovery-tasks", (request, response) => {
 
         response.json(data)
     })
-    
 })
 
 app.post("/create-task", (request, response) => {
     const { description, status } = request.body
 
-    const insertCommand = "INSERT INTO ToDo_MarcioMarcal(description, status) VALUES (?, ?)"
+    const insertCommand = "INSERT INTO ToDo_JoaoReis(description, status) VALUES (?, ?)"
 
     database.query(insertCommand, [description, status], (error) => {
         if(error) {

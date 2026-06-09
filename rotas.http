@@ -5,7 +5,7 @@ POST http://localhost:8080/create-task
 Content-Type: application/json
 
 {
-    "description": "Tarefa qualquer 3",
+    "description": "Tarefa 6",
     "status": 1
 }
 
@@ -19,4 +19,4 @@ GET http://localhost:8080/all-task/
 GET http://localhost:8080/active-tasks/
 
 ###
-GET http://localhost:8080/recovery-tasks/
+GET http://localhost:8080/completed-tasks/
