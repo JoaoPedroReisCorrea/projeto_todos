@@ -39,7 +39,16 @@ app.get("/active-tasks", (request, response) => {
 })
 
 app.get("/recovery-tasks", (request, response) => {
-    const selectCommand ="SELECT * FROM ToDo_JoaoReis"
+    const selectCommand ="SELECT * FROM ToDo_JoaoReis WHERE status = 1"
+    
+    database.query(selectCommand, (error, data) => {
+        if (error) {
+            console.log(error)
+            return
+        }
+
+        response.json(data)
+    })
     
 })
 
