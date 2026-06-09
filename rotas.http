@@ -1,0 +1,19 @@
+GET http://localhost:8080/
+
+###
+POST http://localhost:8080/create-task
+Content-Type: application/json
+
+{
+    "description": "Tarefa qualquer 3",
+    "status": 1
+}
+
+###
+DELETE http://localhost:8080/delete-task/1
+
+###
+GET http://localhost:8080/all-task/
+
+###
+GET http://localhost:8080/active-tasks/
