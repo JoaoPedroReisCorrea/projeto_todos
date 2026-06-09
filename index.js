@@ -1,4 +1,4 @@
-import express from "express"
+import express, { response } from "express"
 import mysql2 from "mysql2"
 
 const app = express()
@@ -38,7 +38,10 @@ app.get("/active-tasks", (request, response) => {
     })
 })
 
-app.get("/")
+app.get("/recovery-tasks", (request, response) => {
+    const selectCommand ="SELECT * FROM ToDo_JoaoReis"
+    
+})
 
 app.post("/create-task", (request, response) => {
     const { description, status } = request.body

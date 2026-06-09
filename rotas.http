@@ -17,3 +17,6 @@ GET http://localhost:8080/all-task/
 
 ###
 GET http://localhost:8080/active-tasks/
+
+###
+GET http://localhost:8080/recovery-tasks/
